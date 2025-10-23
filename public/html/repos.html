@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switlydev - Repositories Page</title>
+    <link rel="stylesheet" href="../../src/css/index.css">
+</head>
+<body>
+    <header>
+        <div style="display: flex; flex-direction: column; align-items: center; padding: 10px;">
+            <h1 style="color: white; text-shadow: 0 0 10px #4a7dff; margin-bottom: 10px;">switlydev</h1>
+            <!-- Navigation menu -->
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="../index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./projects.html" class="nav-link">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./repos.html" class="nav-link">Repositories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="noEmailPopup()">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main content -->
+    <main class="main-content">
+        <div class="container">
+            <h1>My GitHub Repositories</h1>
+            <p>Here are my latest public repositories from GitHub:</p>
+            <div id="github-repos-container">
+                <!-- Repositories will be loaded here dynamically -->
+                <p>Loading repositories...</p>
+            </div>
+        </div>
+    </main>
+    
+    <footer id="footer" style="margin: 0 auto; padding: 20px; width:55%">
+        <a class="social-media-icons" href="https://www.t.me/switlydev" target="_blank">
+            <img src="../assets/socials/telegram.png" alt="Telegram Logo" style="cursor:pointer;" width="10%" height="10%">
+        </a>
+        <a class="social-media-icons" href="https://www.github.com/switlydev" target="_blank">
+            <img src="../assets/socials/github.png" alt="Github Logo" style="cursor:pointer;" width="10%" height="10%">
+        </a>
+        <a class="social-media-icons" href="https://www.dsc.gg/bsps" target="_blank">
+            <img src="../assets/socials/discord.png" alt="Discord Logo" style="cursor:pointer;" width="10%" height="10%">
+        </a>
+        <h4>switlydev &copy;2025</h4>
+    </footer>
+    
+    <script src="../../src/js/index.js"></script>
+    <script>
+        // Initialize GitHub repositories when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            // Replace 'switlydev' with your actual GitHub username
+            initGitHubRepos('switlydev');
+        });
+    </script>
+</body>
+</html>

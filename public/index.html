@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="switlydev's personal website.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="switlydev">
+    <title>switlydev - Home Page</title> 
+    
+    <link rel="stylesheet" href="../src/css/index.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <div style="display: flex; flex-direction: column; align-items: center; padding: 10px;">
+            <h1 style="color: white; text-shadow: 0 0 10px #4a7dff; margin-bottom: 10px;">switlydev</h1>
+            <!-- Navigation menu -->
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="./index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./html/projects.html" class="nav-link">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./html/repos.html" class="nav-link">Repositories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="noEmailPopup()">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main content -->
+    <main class="main-content">
+        <div class="container">
+            <section class="box">
+                <h2>About Me</h2>
+                <p>Hi,welcome to my portfolio website. <br>
+                    I'm Switly and I like coding in my spare time. <br>
+                    I mostly use Python and C# (.NET) as programming language. Even though I have basic knowledge in languages ​​like C++ and Java. I forgot them now lmao. <br>
+                    I have a few projects I've done before, you can find them
+                <a href="html/projects.html">here.</a></p>
+            </section>
+        </div>
+    </main>
+
+    <footer id="footer" style="margin: 0 auto; padding: 20px; width:55%">
+        <a class="social-media-icons" href="https://www.t.me/switlydev" target="_blank">
+            <img src="./assets/socials/telegram.png" alt="Telegram Logo" style="cursor:pointer;" width="10%" height="10%">
+        </a>
+        <a class="social-media-icons" href="https://www.github.com/switlydev" target="_blank">
+            <img src="./assets/socials/github.png" alt="Github Logo" style="cursor:pointer;" width="10%" height="10%">
+        </a>
+        <a class="social-media-icons" href="https://www.dsc.gg/bsps" target="_blank">
+            <img src="./assets/socials/discord.png" alt="Discord Logo" style="cursor:pointer;" width="10%" height="10%">
+        </a>
+        <h4>switlydev &copy;2025</h4>
+    </footer>
+    
+    <script src="../src/js/index.js"></script>
+</body>
+</html>
