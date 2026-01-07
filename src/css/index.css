@@ -1,114 +1,182 @@
 :root {
   --defaultFontSizeMobile: 50px;
-  --defaultFontBigScreen : 70px;
-  /* Space theme colors */
-  --space-bg: #0a0e2a;
-  --space-dark: #070a1a;
-  --space-accent: #1a3a8f;
-  --space-light: #4a7dff;
-  --space-text: #e0f0ff;
-  --space-box-bg: rgba(20, 30, 80, 0.7);
-  --space-box-border: rgba(100, 150, 255, 0.3);
-  --space-nav-bg: rgba(15, 25, 70, 0.8);
+  --defaultFontBigScreen: 70px;
+
+  /* Frutiger Aero - Liquid Glass Theme Colors */
+  --aero-bg-start: #0a4f6d;
+  --aero-bg-mid: #0d7377;
+  --aero-bg-end: #14a3c7;
+
+  /* Glass effect colors */
+  --glass-bg: rgba(255, 255, 255, 0.12);
+  --glass-bg-hover: rgba(255, 255, 255, 0.18);
+  --glass-border: rgba(255, 255, 255, 0.25);
+  --glass-border-glow: rgba(120, 220, 255, 0.5);
+  --glass-shadow: rgba(0, 80, 120, 0.3);
+  --glass-inner-glow: rgba(255, 255, 255, 0.4);
+
+  /* Accent colors - Frutiger Aero style */
+  --aero-accent: #00d4ff;
+  --aero-accent-secondary: #7fefbd;
+  --aero-glow: rgba(0, 212, 255, 0.6);
+  --aero-text: #ffffff;
+  --aero-text-shadow: rgba(0, 100, 150, 0.8);
+
+  /* Nav specific */
+  --nav-glass-bg: rgba(255, 255, 255, 0.15);
+
+  /* Legacy mappings for compatibility */
+  --space-bg: var(--aero-bg-mid);
+  --space-dark: var(--aero-bg-start);
+  --space-accent: var(--aero-accent);
+  --space-light: var(--aero-accent);
+  --space-text: var(--aero-text);
+  --space-box-bg: var(--glass-bg);
+  --space-box-border: var(--glass-border);
+  --space-nav-bg: var(--nav-glass-bg);
 }
 
-body{
-  font-family: 'Arial', sans-serif;
-  background: 
-    /* Stars */
-    radial-gradient(2px 2px at 20px 30px, #eee, rgba(0,0,0,0)),
-    radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
-    radial-gradient(1px 1px at 90px 40px, #fff, rgba(0,0,0,0)),
-    radial-gradient(1px 1px at 130px 80px, #ddd, rgba(0,0,0,0)),
-    radial-gradient(2px 2px at 160px 30px, #fff, rgba(0,0,0,0)),
-    radial-gradient(1px 1px at 210px 90px, #ddd, rgba(0,0,0,0)),
-    radial-gradient(1px 1px at 250px 60px, #fff, rgba(0,0,0,0)),
-    radial-gradient(1px 1px at 300px 40px, #eee, rgba(0,0,0,0)),
-    radial-gradient(2px 2px at 350px 80px, #fff, rgba(0,0,0,0)),
-    radial-gradient(2px 2px at 390px 30px, #ddd, rgba(0,0,0,0)),
-    radial-gradient(1px 1px at 420px 70px, #fff, rgba(0,0,0,0)),
-    radial-gradient(1px 1px at 470px 20px, #fff, rgba(0,0,0,0)),
-    radial-gradient(2px 2px at 520px 90px, #ddd, rgba(0,0,0,0)),
-    radial-gradient(1px 1px at 570px 40px, #fff, rgba(0,0,0,0)),
-    radial-gradient(2px 2px at 610px 70px, #eee, rgba(0,0,0,0)),
-    radial-gradient(1px 1px at 660px 30px, #fff, rgba(0,0,0,0)),
-    radial-gradient(1px 1px at 720px 80px, #ddd, rgba(0,0,0,0)),
-    radial-gradient(2px 2px at 770px 50px, #fff, rgba(0,0,0,0)),
-    radial-gradient(1px 1px at 820px 20px, #fff, rgba(0,0,0,0)),
-    radial-gradient(1px 1px at 870px 60px, #eee, rgba(0,0,0,0)),
-    radial-gradient(2px 2px at 920px 90px, #ddd, rgba(0,0,0,0)),
-    radial-gradient(1px 1px at 970px 40px, #fff, rgba(0,0,0,0)),
-    /* Base gradient */
-    linear-gradient(135deg, var(--space-dark) 0%, var(--space-bg) 50%, var(--space-accent) 100%);
-  background-size: 
-    /* Star positions */
-    1000px 1000px,
-    1000px 1000px,
-    1000px 1000px,
-    1000px 1000px,
-    1000px 1000px,
-    1000px 1000px,
-    1000px 1000px,
-    1000px 1000px,
-    1000px 1000px,
-    1000px 1000px,
-    1000px 1000px,
-    1000px 1000px,
-    1000px 1000px,
-    1000px 1000px,
-    1000px 1000px,
-    1000px 1000px,
-    1000px 1000px,
-    1000px 1000px,
-    1000px 1000px,
-    1000px 1000px,
-    1000px 1000px,
-    1000px 1000px,
-    1000px 1000px,
-    100% 100%;
-  background-repeat: repeat;
+body {
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  min-height: 100vh;
+  background:
+    /* Floating bubbles/orbs - Frutiger Aero style */
+    radial-gradient(ellipse 300px 300px at 10% 20%, rgba(0, 220, 255, 0.15), transparent),
+    radial-gradient(ellipse 250px 250px at 80% 30%, rgba(120, 255, 200, 0.12), transparent),
+    radial-gradient(ellipse 400px 400px at 50% 80%, rgba(0, 180, 255, 0.1), transparent),
+    radial-gradient(ellipse 200px 200px at 90% 85%, rgba(100, 255, 220, 0.15), transparent),
+    radial-gradient(ellipse 350px 350px at 20% 70%, rgba(0, 200, 255, 0.08), transparent),
+    /* Small floating particles */
+    radial-gradient(circle 3px at 15% 25%, rgba(255, 255, 255, 0.6), transparent),
+    radial-gradient(circle 2px at 45% 15%, rgba(255, 255, 255, 0.5), transparent),
+    radial-gradient(circle 4px at 75% 45%, rgba(255, 255, 255, 0.4), transparent),
+    radial-gradient(circle 2px at 85% 70%, rgba(255, 255, 255, 0.5), transparent),
+    radial-gradient(circle 3px at 25% 85%, rgba(255, 255, 255, 0.4), transparent),
+    radial-gradient(circle 2px at 55% 65%, rgba(255, 255, 255, 0.3), transparent),
+    radial-gradient(circle 3px at 35% 40%, rgba(255, 255, 255, 0.5), transparent),
+    radial-gradient(circle 2px at 65% 25%, rgba(255, 255, 255, 0.4), transparent),
+    /* Main gradient - aqua/teal Frutiger Aero style */
+    linear-gradient(160deg,
+      #085078 0%,
+      #0d7377 25%,
+      #14a3c7 50%,
+      #1cbcb4 75%,
+      #85d8ce 100%);
   background-attachment: fixed;
-  color: var(--space-text);
-  animation: spaceAnimation 20s linear infinite;
+  color: var(--aero-text);
   margin: 0;
   padding: 0;
+  animation: aeroFloat 15s ease-in-out infinite;
 }
 
-/* Space animation for stars */
-@keyframes spaceAnimation {
-  0% {
-    background-position: 
-      0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0,
-      0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0,
-      0 0, 0 0, 0 0, 0 0;
-  }
+/* Frutiger Aero floating animation */
+@keyframes aeroFloat {
+
+  0%,
   100% {
-    background-position: 
-      1000px 1000px, 1000px 1000px, 1000px 1000px, 1000px 1000px, 1000px 1000px,
-      1000px 1000px, 1000px 1000px, 1000px 1000px, 1000px 1000px, 1000px 1000px,
-      1000px 1000px, 1000px 1000px, 1000px 1000px, 1000px 1000px, 1000px 1000px,
-      1000px 1000px, 1000px 1000px, 1000px 1000px, 1000px 1000px, 1000px 1000px,
-      1000px 1000px, 1000px 1000px, 1000px 1000px, 1000px 1000px, 0 0;
+    background-position:
+      0% 0%, 100% 0%, 50% 100%, 100% 100%, 0% 50%,
+      15% 25%, 45% 15%, 75% 45%, 85% 70%, 25% 85%, 55% 65%, 35% 40%, 65% 25%,
+      0% 0%;
+  }
+
+  50% {
+    background-position:
+      10% 10%, 90% 10%, 55% 90%, 90% 90%, 10% 60%,
+      18% 28%, 48% 18%, 78% 48%, 88% 73%, 28% 88%, 58% 68%, 38% 43%, 68% 28%,
+      0% 0%;
   }
 }
 
 h1 {
-  color: var(--space-text);
-  text-shadow: 0 0 10px var(--space-light);
+  color: var(--aero-text);
+  text-shadow:
+    0 2px 4px var(--aero-text-shadow),
+    0 0 20px var(--aero-glow),
+    0 0 40px rgba(0, 200, 255, 0.3);
   text-align: center;
+  font-weight: 300;
+  letter-spacing: 2px;
 }
 
-/* Navigation styles */
+h2 {
+  color: var(--aero-text);
+  text-shadow:
+    0 2px 3px rgba(0, 50, 80, 0.4),
+    0 0 15px rgba(0, 200, 255, 0.25);
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+h3 {
+  color: var(--aero-text);
+  text-shadow: 0 1px 3px rgba(0, 50, 80, 0.3);
+  font-weight: 400;
+}
+
+/* Frutiger Aero links */
+a {
+  color: rgba(180, 255, 255, 1);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 8px rgba(0, 200, 255, 0.3);
+}
+
+a:hover {
+  color: rgba(220, 255, 255, 1);
+  text-shadow:
+    0 0 12px rgba(0, 230, 255, 0.5),
+    0 0 20px rgba(0, 200, 255, 0.3);
+}
+
+/* Paragraph styling */
+p {
+  line-height: 1.7;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+
+
+/* Navigation styles - Liquid Glass */
 nav {
-  background-color: var(--space-nav-bg);
-  border-radius: 10px;
-  padding: 10px;
-  margin: 10px 0;
-  box-shadow: 0 0 15px rgba(100, 150, 255, 0.3);
-  border: 1px solid var(--space-box-border);
-  backdrop-filter: blur(5px);
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.25) 0%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0.15) 100%);
+  border-radius: 20px;
+  padding: 12px 20px;
+  margin: 15px 0;
+  box-shadow:
+    0 8px 32px rgba(0, 80, 120, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   width: 100%;
-  max-width: 500px;
+  max-width: 550px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glass shine effect */
+nav::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent);
+  transition: left 0.5s ease;
+}
+
+nav:hover::before {
+  left: 100%;
 }
 
 /* Flexbox navigation for desktop */
@@ -126,20 +194,28 @@ nav {
 }
 
 .nav-link {
-  color: var(--space-text);
+  color: var(--aero-text);
   text-decoration: none;
-  font-weight: bold;
-  padding: 8px 15px;
-  border-radius: 6px;
-  transition: all 0.3s ease;
+  font-weight: 500;
+  padding: 10px 18px;
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: block;
   text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
 }
 
 .nav-link:hover {
-  background-color: var(--space-accent);
-  box-shadow: 0 0 10px var(--space-light);
-  transform: translateY(-2px);
+  background: linear-gradient(135deg,
+      rgba(0, 212, 255, 0.4) 0%,
+      rgba(127, 239, 189, 0.3) 100%);
+  box-shadow:
+    0 4px 15px rgba(0, 212, 255, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transform: translateY(-3px) scale(1.02);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 /* for tablet? */
@@ -148,17 +224,17 @@ nav {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .nav-item {
     width: 80%;
     margin: 5px 0;
   }
-  
+
   .nav-link {
     padding: 12px;
     width: 100%;
   }
-  
+
   h1 {
     font-size: 2rem;
   }
@@ -172,24 +248,58 @@ footer {
 
 .button {
   margin: 20px auto;
-  padding: 12px 24px;
+  padding: 14px 28px;
   font-size: 16px;
-  border: none;
-  border-radius: 8px;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 15px;
   cursor: pointer;
-  background-color: var(--space-accent);
-  color: var(--space-text);
-  transition: all 0.3s;
+  background: linear-gradient(135deg,
+      rgba(0, 212, 255, 0.5) 0%,
+      rgba(127, 239, 189, 0.4) 100%);
+  color: var(--aero-text);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: inline-block;
   text-decoration: none;
   text-align: center;
-  box-shadow: 0 0 10px rgba(100, 150, 255, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow:
+    0 8px 25px rgba(0, 150, 200, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
 }
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent);
+  transition: left 0.4s ease;
+}
+
+.button:hover::before {
+  left: 100%;
+}
+
 .button:hover {
-  background-color: var(--space-light);
+  background: linear-gradient(135deg,
+      rgba(0, 230, 255, 0.6) 0%,
+      rgba(127, 255, 200, 0.5) 100%);
   color: white;
-  box-shadow: 0 0 15px var(--space-light);
-  transform: translateY(-2px);
+  box-shadow:
+    0 12px 35px rgba(0, 212, 255, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  transform: translateY(-3px) scale(1.02);
+  border-color: rgba(255, 255, 255, 0.5);
 }
 
 .container {
@@ -198,47 +308,106 @@ footer {
   margin: 0 auto;
   padding: 20px;
 }
+
+/* Liquid Glass Box */
 .box {
-  background-color: var(--space-box-bg);
+  background: linear-gradient(145deg,
+      rgba(255, 255, 255, 0.2) 0%,
+      rgba(255, 255, 255, 0.08) 50%,
+      rgba(255, 255, 255, 0.12) 100%);
   padding: 5vh 4vw;
-  margin-top: 20px;
-  border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0, 0, 50, 0.3);
-  border: 1px solid var(--space-box-border);
-  backdrop-filter: blur(5px);
-  transition: all 0.3s ease;
+  margin-top: 25px;
+  border-radius: 24px;
+  box-shadow:
+    0 8px 32px rgba(0, 60, 100, 0.25),
+    0 2px 8px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
 }
+
+/* Glass reflection effect */
+.box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.15) 0%,
+      transparent 100%);
+  border-radius: 24px 24px 0 0;
+  pointer-events: none;
+}
+
 .box:hover {
-  box-shadow: 0 10px 25px rgba(100, 150, 255, 0.4);
-  transform: translateY(-5px);
+  box-shadow:
+    0 15px 45px rgba(0, 150, 200, 0.35),
+    0 5px 15px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  transform: translateY(-8px) scale(1.01);
+  border-color: rgba(255, 255, 255, 0.5);
 }
-.text-box{
-  background-color: var(--space-box-bg);
-  padding:0.5vh 1vw;
-  border: 1px solid var(--space-box-border);
-  border-radius: 10px;
+
+.text-box {
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.18) 0%,
+      rgba(255, 255, 255, 0.08) 100%);
+  padding: 1vh 1.5vw;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 14px;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow:
+    0 4px 15px rgba(0, 60, 100, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
+
 section:hover {
-  box-shadow: 0 10px 25px rgba(100, 150, 255, 0.4);
+  box-shadow:
+    0 15px 40px rgba(0, 180, 220, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
 .social-media-icons {
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   max-width: 1000px;
   text-decoration: none;
+  display: inline-block;
+  margin: 0 8px;
 }
 
 .social-media-icons img {
-  width: 40px;
-  height: 40px;
-  transition: transform 0.3s;
-  filter: drop-shadow(0 0 5px var(--space-light));
+  width: 45px;
+  height: 45px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  filter:
+    drop-shadow(0 0 8px rgba(0, 212, 255, 0.5)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 5px;
 }
+
+.social-media-icons img:hover {
+  filter:
+    drop-shadow(0 0 15px rgba(0, 230, 255, 0.8)) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+  transform: translateY(-5px) scale(1.1);
+  background: rgba(255, 255, 255, 0.2);
+}
+
 .github-repo h2 {
   margin-top: 0;
-  color: var(--space-text);
-  text-shadow: 0 0 5px rgba(100, 150, 255, 0.5);
+  color: var(--aero-text);
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.2),
+    0 0 15px rgba(0, 212, 255, 0.4);
 }
 
 .repo-stats {
@@ -246,15 +415,18 @@ section:hover {
   justify-content: space-between;
   margin: 10px 0;
   font-size: 0.9em;
-  color: var(--space-light);
+  color: rgba(200, 255, 255, 0.9);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .repo-stats .stars {
   font-weight: bold;
+  color: rgba(255, 220, 100, 0.95);
 }
 
 .repo-stats .language {
   font-style: italic;
+  color: rgba(180, 255, 220, 0.9);
 }
 
 /* for phone */
@@ -263,17 +435,21 @@ section:hover {
     font-size: 15px;
     padding: 0 30px;
     justify-content: right;
-    
+
   }
+
   header h1 {
     font-size: 3.5vw;
   }
+
   header p {
     font-size: 1.5vw;
   }
+
   .about h2 {
     font-size: 2.5vw;
   }
+
   .about p {
     font-size: 1.5vw;
   }
@@ -289,33 +465,369 @@ section:hover {
     justify-content: center;
     justify-self: center;
   }
+
   header h1 {
     font-size: 2.5rem;
   }
+
   header p {
     font-size: 1.2rem;
   }
+
   .about h2 {
     font-size: 2rem;
   }
+
   .about p {
     font-size: 1.1rem;
   }
 
 }
+
+/* Liquid Glass Footer */
 footer {
-  background-color: var(--space-box-bg);
-  padding: 10px;
+  background: linear-gradient(145deg,
+      rgba(255, 255, 255, 0.18) 0%,
+      rgba(255, 255, 255, 0.08) 50%,
+      rgba(255, 255, 255, 0.12) 100%);
+  padding: 20px 15px;
   text-align: center;
-  margin-top: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 50, 0.3);
-  border: 1px solid var(--space-box-border);
+  margin-top: 25px;
+  border-radius: 20px;
+  box-shadow:
+    0 8px 32px rgba(0, 60, 100, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
 }
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.12) 0%,
+      transparent 100%);
+  border-radius: 20px 20px 0 0;
+  pointer-events: none;
+}
+
 footer:hover {
-  box-shadow: 0 10px 25px rgba(100, 150, 255, 0.4);
+  box-shadow:
+    0 12px 40px rgba(0, 150, 200, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.45);
 }
+
+footer h4 {
+  color: var(--aero-text);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  margin-top: 15px;
+}
+
 footer img:hover {
-  transform: scale(1.1);
-  transition: transform 0.3s;
+  transform: scale(1.15) translateY(-3px);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ❄️ Kar Taneleri - Yılbaşı Efekti */
+.snowflakes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.snowflake {
+  position: absolute;
+  top: -50px;
+  color: #fff;
+  font-size: 1.5rem;
+  text-shadow: 0 0 10px rgba(180, 220, 255, 0.8), 0 0 20px rgba(150, 200, 255, 0.5);
+  animation: snowfall linear infinite;
+  opacity: 0.9;
+  user-select: none;
+}
+
+/* Farklı boyutlar */
+.snowflake.small {
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+
+.snowflake.medium {
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+.snowflake.large {
+  font-size: 2rem;
+  opacity: 1;
+  text-shadow: 0 0 15px rgba(180, 220, 255, 1), 0 0 30px rgba(150, 200, 255, 0.8);
+}
+
+/* Ana düşüş animasyonu */
+@keyframes snowfall {
+  0% {
+    transform: translateY(-50px) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(100vh) translateX(50px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Farklı salınım desenleri */
+@keyframes snowfall-sway1 {
+  0% {
+    transform: translateY(-50px) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  25% {
+    transform: translateY(25vh) translateX(30px) rotate(90deg);
+  }
+
+  50% {
+    transform: translateY(50vh) translateX(-20px) rotate(180deg);
+  }
+
+  75% {
+    transform: translateY(75vh) translateX(40px) rotate(270deg);
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(100vh) translateX(10px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes snowfall-sway2 {
+  0% {
+    transform: translateY(-50px) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  25% {
+    transform: translateY(25vh) translateX(-25px) rotate(45deg);
+  }
+
+  50% {
+    transform: translateY(50vh) translateX(35px) rotate(90deg);
+  }
+
+  75% {
+    transform: translateY(75vh) translateX(-15px) rotate(180deg);
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(100vh) translateX(20px) rotate(270deg);
+    opacity: 0;
+  }
+}
+
+@keyframes snowfall-drift {
+  0% {
+    transform: translateY(-50px) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(100vh) translateX(-60px) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+/* Kar tanesi pozisyonları ve animasyon süreleri */
+.snowflake:nth-child(1) {
+  left: 5%;
+  animation: snowfall-sway1 8s -1s infinite;
+}
+
+.snowflake:nth-child(2) {
+  left: 10%;
+  animation: snowfall-sway2 12s -3s infinite;
+}
+
+.snowflake:nth-child(3) {
+  left: 15%;
+  animation: snowfall 6s -2s infinite;
+}
+
+.snowflake:nth-child(4) {
+  left: 20%;
+  animation: snowfall-drift 10s -4s infinite;
+}
+
+.snowflake:nth-child(5) {
+  left: 25%;
+  animation: snowfall-sway1 9s -0.5s infinite;
+}
+
+.snowflake:nth-child(6) {
+  left: 30%;
+  animation: snowfall 11s -5s infinite;
+}
+
+.snowflake:nth-child(7) {
+  left: 35%;
+  animation: snowfall-sway2 7s -2.5s infinite;
+}
+
+.snowflake:nth-child(8) {
+  left: 40%;
+  animation: snowfall-drift 13s -6s infinite;
+}
+
+.snowflake:nth-child(9) {
+  left: 45%;
+  animation: snowfall-sway1 8s -3.5s infinite;
+}
+
+.snowflake:nth-child(10) {
+  left: 50%;
+  animation: snowfall 10s -1.5s infinite;
+}
+
+.snowflake:nth-child(11) {
+  left: 55%;
+  animation: snowfall-sway2 9s -4.5s infinite;
+}
+
+.snowflake:nth-child(12) {
+  left: 60%;
+  animation: snowfall-drift 7s -2s infinite;
+}
+
+.snowflake:nth-child(13) {
+  left: 65%;
+  animation: snowfall-sway1 12s -5.5s infinite;
+}
+
+.snowflake:nth-child(14) {
+  left: 70%;
+  animation: snowfall 8s -0.8s infinite;
+}
+
+.snowflake:nth-child(15) {
+  left: 75%;
+  animation: snowfall-sway2 11s -3.2s infinite;
+}
+
+.snowflake:nth-child(16) {
+  left: 80%;
+  animation: snowfall 6s -1.8s infinite;
+}
+
+.snowflake:nth-child(17) {
+  left: 85%;
+  animation: snowfall-drift 9s -4.2s infinite;
+}
+
+.snowflake:nth-child(18) {
+  left: 90%;
+  animation: snowfall-sway1 10s -2.8s infinite;
+}
+
+.snowflake:nth-child(19) {
+  left: 95%;
+  animation: snowfall-sway2 8s -5.8s infinite;
+}
+
+.snowflake:nth-child(20) {
+  left: 2%;
+  animation: snowfall 13s -6.5s infinite;
+}
+
+.snowflake:nth-child(21) {
+  left: 12%;
+  animation: snowfall-drift 7s -0.3s infinite;
+}
+
+.snowflake:nth-child(22) {
+  left: 22%;
+  animation: snowfall-sway1 11s -2.3s infinite;
+}
+
+.snowflake:nth-child(23) {
+  left: 32%;
+  animation: snowfall 9s -4.8s infinite;
+}
+
+.snowflake:nth-child(24) {
+  left: 42%;
+  animation: snowfall-sway2 6s -1.3s infinite;
+}
+
+.snowflake:nth-child(25) {
+  left: 52%;
+  animation: snowfall-drift 10s -3.8s infinite;
+}
+
+.snowflake:nth-child(26) {
+  left: 62%;
+  animation: snowfall 8s -5.3s infinite;
+}
+
+.snowflake:nth-child(27) {
+  left: 72%;
+  animation: snowfall-sway1 12s -0.8s infinite;
+}
+
+.snowflake:nth-child(28) {
+  left: 82%;
+  animation: snowfall-sway2 7s -2.8s infinite;
+}
+
+.snowflake:nth-child(29) {
+  left: 92%;
+  animation: snowfall 11s -4.3s infinite;
+}
+
+.snowflake:nth-child(30) {
+  left: 8%;
+  animation: snowfall-drift 9s -6.3s infinite;
 }
