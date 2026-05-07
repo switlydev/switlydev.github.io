@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Feather/leaf shape -->
+  <path fill="#003B57" d="M73 4C55 4 37 22 31 44 24 32 15 26 5 28L2 50c12-3 21 5 24 20L22 96h14l4-22c5 26 20 26 20 26s28-2 36-46c5-27-4-50-23-50z"/>
+  <path fill="#0F80CC" d="M73 8C57 8 40 24 34 46c-7-12-16-17-25-15L7 49c11-2 20 6 22 21L26 92h8l4-24c4 28 18 28 18 28s26-2 34-46C95 28 89 8 73 8z"/>
+  <ellipse fill="#fff" opacity="0.6" cx="62" cy="26" rx="8" ry="12" transform="rotate(-30 62 26)"/>
+</svg>

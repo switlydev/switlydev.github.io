@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="switlydev — developer, modder & reverse engineer. Personal portfolio.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="switlydev">
+    <meta name="theme-color" content="#080d1a">
+    <title>switlydev — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../src/css/index.css">
+</head>
+
+<body>
+    <!-- Page Loader -->
+    <div id="loader">
+        <div class="loader-inner">
+            <span class="loader-bracket">&lt;</span><span id="loader-name"></span><span
+                class="loader-bracket">/&gt;</span>
+        </div>
+        <div class="loader-bar">
+            <div class="loader-fill" id="loader-fill"></div>
+        </div>
+    </div>
+
+    <!-- Noise texture overlay -->
+    <div class="noise-overlay"></div>
+
+    <!-- Custom cursor -->
+    <div class="cur-dot" id="cur-dot"></div>
+    <div class="cur-ring" id="cur-ring"></div>
+
+    <canvas id="bg-canvas"></canvas>
+    <div class="cursor-glow" id="cursor-glow"></div>
+
+    <!-- ── Navbar ── -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="#home" class="nav-logo">
+                <span class="logo-bracket">&lt;</span>switly<span class="logo-accent">dev</span><span
+                    class="logo-bracket">/&gt;</span>
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#stack" class="nav-link">Stack</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#repos" class="nav-link">Repos</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <ul>
+            <li><a href="#home" class="mobile-link">Home</a></li>
+            <li><a href="#about" class="mobile-link">About</a></li>
+            <li><a href="#stack" class="mobile-link">Stack</a></li>
+            <li><a href="#projects" class="mobile-link">Projects</a></li>
+            <li><a href="#repos" class="mobile-link">Repos</a></li>
+            <li><a href="#contact" class="mobile-link">Contact</a></li>
+        </ul>
+    </div>
+
+    <main>
+        <!-- ══════════════════════════════════════
+         HERO
+    ══════════════════════════════════════ -->
+        <section class="hero" id="home">
+            <div class="hero-left reveal">
+                <div class="hero-tag">
+                    <span class="tag-dot"></span> Open to collabs
+                </div>
+                <h1 class="hero-title">
+                    <span class="greeting">Hey, I'm</span>
+                    <span class="name gradient-text">Switly</span>
+                </h1>
+                <p class="hero-subtitle"><span id="typewriter"></span><span class="tw-cursor">|</span></p>
+                <p class="hero-desc">
+                    I build things I find interesting — game servers, bots, security tools.
+                    Mostly Python &amp; C#, occasionally poking at binaries.
+                </p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary" id="btn-projects">
+                        <span>View Projects</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                    <a href="https://github.com/switlydev" target="_blank" rel="noopener" class="btn btn-ghost"
+                        id="btn-github">
+                        <svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px">
+                            <path
+                                d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 016 0c2.28-1.55 3.29-1.23 3.29-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.82.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
+                        </svg>
+                        GitHub
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-num" data-target="9">0</span>
+                        <span class="stat-lbl">Public repos</span>
+                    </div>
+                    <div class="stat-sep"></div>
+                    <div class="stat">
+                        <span class="stat-num" data-target="15">0</span>
+                        <span class="stat-lbl">Followers</span>
+                    </div>
+                    <div class="stat-sep"></div>
+                    <div class="stat">
+                        <span class="stat-num" data-target="3">0</span>
+                        <span class="stat-lbl">Years coding</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-right reveal">
+                <div class="avatar-ring">
+                    <div class="avatar-glow"></div>
+                    <img src="./assets/img/avatar.jpg" alt="switlydev avatar" class="avatar-img" id="avatar-img"
+                        crossorigin="anonymous">
+                    <div class="avatar-badge">
+                        <span class="avatar-badge-dot"></span>
+                        <span>Available</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroll-hint">
+                <div class="scroll-mouse">
+                    <div class="scroll-wheel"></div>
+                </div>
+                <span>Scroll</span>
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════
+         ABOUT
+    ══════════════════════════════════════ -->
+        <section class="section" id="about">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="sec-tag">01 / About</span>
+                    <h2 class="sec-title">A bit about <span class="gradient-text">me</span></h2>
+                </div>
+                <div class="about-grid">
+                    <div class="about-text reveal">
+                        <p>Hey! I'm Switly, a self-taught developer who loves building things just for the fun of it.
+                            Started around 2022 and haven't stopped since.</p>
+                        <p>My main focus is Python and C# (.NET). I'm especially drawn to how things work under the hood
+                            — private servers, reverse engineering, and low-level memory stuff.</p>
+                        <p>Most of my work revolves around game emulation and tooling. I've also built Telegram bots,
+                            REST APIs, and security utilities. If I find it interesting, I'll probably build it.</p>
+                        <div class="about-links">
+                            <a href="https://github.com/switlydev" target="_blank" rel="noopener" class="about-link"
+                                id="alink-github">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 016 0c2.28-1.55 3.29-1.23 3.29-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.82.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
+                                </svg>
+                                github.com/switlydev
+                            </a>
+                            <a href="https://t.me/switlydev" target="_blank" rel="noopener" class="about-link"
+                                id="alink-tg">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.94 8.19l-2.02 9.52c-.15.67-.54.84-1.09.52l-3-2.21-1.45 1.4c-.16.16-.3.3-.6.3l.21-3.02 5.5-4.97c.24-.21-.05-.33-.37-.12L7.04 14.7l-2.97-.93c-.64-.2-.66-.64.14-.95l11.6-4.47c.54-.19 1.01.13.83.94z" />
+                                </svg>
+                                @switlydev
+                            </a>
+                        </div>
+                    </div>
+                    <div class="timeline reveal">
+                        <div class="tl-item">
+                            <div class="tl-dot"></div>
+                            <div class="tl-body">
+                                <span class="tl-year">2022</span>
+                                <h4>Started coding</h4>
+                                <p>First Brawl Stars private server. Learned Python & server basics.</p>
+                            </div>
+                        </div>
+                        <div class="tl-item">
+                            <div class="tl-dot"></div>
+                            <div class="tl-body">
+                                <span class="tl-year">2023</span>
+                                <h4>SwitlyBrawl peak</h4>
+                                <p>Server reached its community peak. Started exploring C# &amp; .NET.</p>
+                            </div>
+                        </div>
+                        <div class="tl-item">
+                            <div class="tl-dot"></div>
+                            <div class="tl-body">
+                                <span class="tl-year">2024</span>
+                                <h4>Reverse engineering</h4>
+                                <p>Started using IDA Pro, Frida, and digging into game binaries.</p>
+                            </div>
+                        </div>
+                        <div class="tl-item tl-now">
+                            <div class="tl-dot pulse"></div>
+                            <div class="tl-body">
+                                <span class="tl-year">Now</span>
+                                <h4>Building more</h4>
+                                <p>Servers, bots, security tools. Always experimenting.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════
+         BENTO GRID
+    ══════════════════════════════════════ -->
+        <section class="section section-alt" id="bento">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="sec-tag">02 / Snapshot</span>
+                    <h2 class="sec-title">Quick <span class="gradient-text">facts</span></h2>
+                </div>
+                <div class="bento-grid reveal">
+                    <!-- Currently working on (wide) -->
+                    <div class="bento-card bento-wide" id="bento-cwo">
+                        <div class="bento-label"><svg class="bico" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                            </svg> Currently working on</div>
+                        <div class="bento-main">Private Projects</div>
+                        <div class="bento-sub">Working on several private projects — experimenting with new ideas and building tools for personal use.</div>
+                        <div class="bento-badge-row">
+                            <span class="bento-tag bento-green">Active</span>
+                        </div>
+                    </div>
+                    <!-- Setup / Tools -->
+                    <div class="bento-card" id="bento-setup">
+                        <div class="bento-label"><img src="./assets/svg/icons/monitor.svg" class="bico" alt=""> Setup
+                            &amp; Tools</div>
+                        <div class="setup-grid">
+                            <div class="setup-tool" title="Visual Studio Code">
+                                <img src="./assets/svg/devicons/vscode.svg" alt="VSCode">
+                                <span>VSCode</span>
+                            </div>
+                            <div class="setup-tool" title="Windows">
+                                <img src="./assets/svg/devicons/windows.svg" alt="Windows">
+                                <span>Windows</span>
+                            </div>
+                            <div class="setup-tool" title="Linux">
+                                <img src="./assets/svg/devicons/linux.svg" alt="Linux">
+                                <span>Linux</span>
+                            </div>
+                            <div class="setup-tool" title="Git">
+                                <img src="./assets/svg/devicons/git.svg" alt="Git">
+                                <span>Git</span>
+                            </div>
+                            <div class="setup-tool" title="AI Agents">
+                                <img src="./assets/svg/icons/ai.svg" alt="AI" style="filter:invert(1)">
+                                <span>AI Agents</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Focus -->
+                    <div class="bento-card" id="bento-focus">
+                        <div class="bento-label"><img src="./assets/svg/icons/target.svg" class="bico" alt=""> Main
+                            focus</div>
+                        <div class="bento-main">Game servers</div>
+                        <div class="bento-sub">Reverse engineering &amp; emulation</div>
+                    </div>
+                    <!-- Languages -->
+                    <div class="bento-card" id="bento-langs">
+                        <div class="bento-label"><img src="./assets/svg/icons/code.svg" class="bico" alt=""> Languages
+                        </div>
+                        <div class="bento-langs-list">
+                            <div class="blang"><img src="./assets/svg/devicons/python.svg" alt="Python"
+                                    class="blang-icon"> Python</div>
+                            <div class="blang"><img src="./assets/svg/devicons/csharp.svg" alt="C#" class="blang-icon">
+                                C#</div>
+                            <div class="blang"><img src="./assets/svg/devicons/java.svg" alt="Java" class="blang-icon">
+                                Java</div>
+                            <div class="blang"><img src="./assets/svg/devicons/go.svg" alt="Go" class="blang-icon">
+                                Go</div>
+                            <div class="blang"><img src="./assets/svg/devicons/typescript.svg" alt="TypeScript" class="blang-icon">
+                                TypeScript</div>
+                            <div class="blang"><img src="./assets/svg/devicons/cplusplus.svg" alt="C++"
+                                    class="blang-icon"> C++</div>
+                        </div>
+                    </div>
+                    <!-- Availability -->
+                    <div class="bento-card bento-avail" id="bento-avail">
+                        <div class="bento-label"><img src="./assets/svg/icons/signal.svg" class="bico" alt="">
+                            Availability</div>
+                        <div class="avail-status">
+                            <span class="avail-dot"></span>
+                            <span class="avail-text">Open for collabs</span>
+                        </div>
+                        <div class="avail-list">
+                            <div class="avail-item">
+                                <span class="avail-check"><img src="./assets/svg/icons/check.svg" class="check-icon"
+                                        alt="âœ“"></span>
+                                <span>Private server dev</span>
+                            </div>
+                            <div class="avail-item">
+                                <span class="avail-check"><img src="./assets/svg/icons/check.svg" class="check-icon"
+                                        alt="âœ“"></span>
+                                <span>Reverse engineering</span>
+                            </div>
+                            <div class="avail-item">
+                                <span class="avail-check"><img src="./assets/svg/icons/check.svg" class="check-icon"
+                                        alt="âœ“"></span>
+                                <span>Telegram bots</span>
+                            </div>
+                            <div class="avail-item">
+                                <span class="avail-check"><img src="./assets/svg/icons/check.svg" class="check-icon"
+                                        alt="âœ“"></span>
+                                <span>Tooling &amp; scripting</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- GitHub heatmap (wide) -->
+                    <div class="bento-card bento-wide" id="bento-heat">
+                        <div class="bento-label"><img src="./assets/svg/icons/barchart.svg" class="bico" alt=""> GitHub
+                            Activity <span id="heat-year" style="color:var(--muted);font-weight:400"></span></div>
+                        <div id="heatmap-container" class="heatmap-wrap">
+                            <div class="repos-loading" style="padding:20px">
+                                <div class="spinner" style="width:22px;height:22px;border-width:2px"></div>
+                            </div>
+                        </div>
+                        <div class="heatmap-legend">
+                            <span>Less</span>
+                            <div class="hleg">
+                                <div class="hcell" style="--c:#161b22"></div>
+                                <div class="hcell" style="--c:#0e4429"></div>
+                                <div class="hcell" style="--c:#006d32"></div>
+                                <div class="hcell" style="--c:#26a641"></div>
+                                <div class="hcell" style="--c:#39d353"></div>
+                            </div>
+                            <span>More</span>
+                        </div>
+                    </div>
+                    <!-- Quote -->
+                    <div class="bento-card bento-quote" id="bento-quote">
+                        <div class="bento-label"><img src="./assets/svg/icons/sparkles.svg" class="bico" alt=""> Vibe
+                        </div>
+                        <div class="bento-quote-text">"If it's interesting,<br>I'll build it."</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════
+         TECH STACK
+    ══════════════════════════════════════ -->
+        <section class="section section-alt" id="stack">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="sec-tag">02 / Stack</span>
+                    <h2 class="sec-title">Tools &amp; <span class="gradient-text">Frameworks</span></h2>
+                    <p class="sec-sub">What I actually use day-to-day</p>
+                </div>
+
+                <div class="stack-categories reveal">
+
+                    <div class="stack-cat">
+                        <h3 class="stack-cat-title">
+                            <img class="stack-cat-icon" src="./assets/svg/devicons/python.svg" alt="Python"> Python
+                            Ecosystem
+                        </h3>
+                        <div class="stack-pills">
+                            <div class="pill" id="pill-telebot">
+                                <img class="pill-icon" src="./assets/svg/icons/bot.svg" alt="bot">
+                                <span class="pill-name">TeleBot</span>
+                                <span class="pill-sub">Telegram bots</span>
+                            </div>
+                            <div class="pill" id="pill-asyncio">
+                                <img class="pill-icon" src="./assets/svg/icons/bolt.svg" alt="bolt">
+                                <span class="pill-name">asyncio</span>
+                                <span class="pill-sub">Async I/O</span>
+                            </div>
+                            <div class="pill" id="pill-flask">
+                                <img class="pill-icon" src="./assets/svg/devicons/flask.svg" alt="Flask"
+                                    style="filter:invert(1) brightness(1.5)">
+                                <span class="pill-name">Flask</span>
+                                <span class="pill-sub">REST APIs</span>
+                            </div>
+                            <div class="pill" id="pill-requests">
+                                <img class="pill-icon" src="./assets/svg/icons/link.svg" alt="link">
+                                <span class="pill-name">requests</span>
+                                <span class="pill-sub">HTTP client</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stack-cat">
+                        <h3 class="stack-cat-title">
+                            <img class="stack-cat-icon" src="./assets/svg/devicons/csharp.svg" alt="C#"> C# / .NET
+                        </h3>
+                        <div class="stack-pills">
+                            <div class="pill" id="pill-dotnet">
+                                <img class="pill-icon" src="./assets/svg/devicons/dotnet.svg" alt=".NET">
+                                <span class="pill-name">.NET 8</span>
+                                <span class="pill-sub">Runtime</span>
+                            </div>
+                            <div class="pill" id="pill-aspnet">
+                                <img class="pill-icon" src="./assets/svg/icons/globe.svg" alt="globe">
+                                <span class="pill-name">ASP.NET</span>
+                                <span class="pill-sub">Web server</span>
+                            </div>
+                            <div class="pill" id="pill-efcore">
+                                <img class="pill-icon" src="./assets/svg/icons/database.svg" alt="database">
+                                <span class="pill-name">EF Core</span>
+                                <span class="pill-sub">ORM</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stack-cat">
+                        <h3 class="stack-cat-title">
+                            <img class="stack-cat-icon" src="./assets/svg/icons/search.svg" alt="search"> Reverse
+                            Engineering
+                        </h3>
+                        <div class="stack-pills">
+                            <div class="pill" id="pill-ida">
+                                <img class="pill-icon" src="./assets/svg/icons/search.svg" alt="search">
+                                <span class="pill-name">IDA Pro</span>
+                                <span class="pill-sub">Disassembler</span>
+                            </div>
+                            <div class="pill" id="pill-frida">
+                                <img class="pill-icon" src="./assets/svg/icons/inject.svg" alt="inject">
+                                <span class="pill-name">Frida</span>
+                                <span class="pill-sub">Dynamic inject</span>
+                            </div>
+                            <div class="pill" id="pill-ghidra">
+                                <img class="pill-icon" src="./assets/svg/icons/ghost.svg" alt="ghost">
+                                <span class="pill-name">Ghidra</span>
+                                <span class="pill-sub">NSA decompiler</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stack-cat">
+                        <h3 class="stack-cat-title">
+                            <img class="stack-cat-icon" src="./assets/svg/icons/database.svg" alt="database"> Data &amp;
+                            Infra
+                        </h3>
+                        <div class="stack-pills">
+                            <div class="pill" id="pill-sqlite">
+                                <img class="pill-icon" src="./assets/svg/devicons/sqlite.svg" alt="SQLite">
+                                <span class="pill-name">SQLite</span>
+                                <span class="pill-sub">Embedded DB</span>
+                            </div>
+                            <div class="pill" id="pill-mongodb">
+                                <img class="pill-icon" src="./assets/svg/devicons/mongodb.svg" alt="MongoDB">
+                                <span class="pill-name">MongoDB</span>
+                                <span class="pill-sub">NoSQL</span>
+                            </div>
+                            <div class="pill" id="pill-git">
+                                <img class="pill-icon" src="./assets/svg/devicons/git.svg" alt="Git">
+                                <span class="pill-name">Git</span>
+                                <span class="pill-sub">Version control</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════
+         PROJECTS
+    ══════════════════════════════════════ -->
+        <section class="section" id="projects">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="sec-tag">03 / Projects</span>
+                    <h2 class="sec-title">Things I've <span class="gradient-text">built</span></h2>
+                </div>
+                <div class="projects-grid">
+                    <article class="proj-card reveal" id="proj-switlybrawl">
+                        <div class="proj-img-wrap">
+                            <img src="./assets/img/projects/switlybrawlgame.jpg" alt="SwitlyBrawl"
+                                onerror="this.parentElement.classList.add('no-img')">
+                            <div class="proj-overlay"><span>2022 – 2024</span></div>
+                        </div>
+                        <div class="proj-body">
+                            <div class="proj-tags">
+                                <span class="ptag">Brawl Stars</span>
+                                <span class="ptag ptag-off">Inactive</span>
+                            </div>
+                            <h3>SwitlyBrawl</h3>
+                            <p>A Brawl Stars private server opened in 2022. Built on an open-source base with my own
+                                changes. Hit its peak in 2023, shut down in 2024 due to VPS costs.</p>
+                            <span class="proj-status off">• Shut down</span>
+                        </div>
+                    </article>
+
+                    <article class="proj-card reveal" id="proj-stuntbrawl">
+                        <div class="proj-img-wrap">
+                            <img src="./assets/img/projects/stuntbrawl.jpg" alt="Stunt Brawl"
+                                onerror="this.parentElement.classList.add('no-img')">
+                            <div class="proj-overlay"><span>2024</span></div>
+                        </div>
+                        <div class="proj-body">
+                            <div class="proj-tags">
+                                <span class="ptag">Brawl Stars</span>
+                                <span class="ptag">Old School</span>
+                                <span class="ptag ptag-off">Inactive</span>
+                            </div>
+                            <h3>Stunt Brawl</h3>
+                            <p>A Brawl Stars modding sandbox on version 18.109. Designed for modders to test custom
+                                content. Open briefly in 2024, now inactive.</p>
+                            <span class="proj-status off">• Shut down</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════
+         REPOS
+    ══════════════════════════════════════ -->
+        <section class="section section-alt" id="repos">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="sec-tag">04 / Open Source</span>
+                    <h2 class="sec-title">GitHub <span class="gradient-text">Repos</span></h2>
+                    <p class="sec-sub">My latest public repositories, fetched live</p>
+                </div>
+                <div id="github-repos-container" class="repos-grid">
+                    <div class="repos-loading">
+                        <div class="spinner"></div>
+                        <span>Fetching from GitHub…</span>
+                    </div>
+                </div>
+                <div class="repos-cta reveal">
+                    <a href="https://github.com/switlydev" target="_blank" rel="noopener" class="btn btn-ghost"
+                        id="btn-all-repos">
+                        View all repositories
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════
+         CONTACT
+    ══════════════════════════════════════ -->
+        <section class="section" id="contact">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="sec-tag">05 / Contact</span>
+                    <h2 class="sec-title">Let's <span class="gradient-text">connect</span></h2>
+                    <p class="sec-sub">Send me a message or reach out on socials</p>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper reveal">
+                    <form id="contact-form" class="contact-form">
+                        <input type="hidden" name="access_key" value="f8c36f57-f166-4452-b19d-41e95d024e9e">
+                        <input type="hidden" name="subject" value="New message from Portfolio">
+                        <input type="hidden" name="from_name" value="Portfolio Contact Form">
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required placeholder="Your name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required placeholder="your@email.com">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required placeholder="Your message..." rows="5"></textarea>
+                        </div>
+
+                        <div class="h-captcha" data-captcha="true"></div>
+                        
+                        <button type="submit" class="btn btn-primary form-submit">
+                            <span id="submit-text">Send Message</span>
+                            <span id="submit-loading" class="submit-loading" style="display:none;">
+                                <span class="spinner-small"></span> Sending...
+                            </span>
+                        </button>
+
+                        <div id="form-message" class="form-message"></div>
+                    </form>
+                </div>
+
+                <div class="contact-cards reveal">
+                    <a href="https://t.me/switlydev" target="_blank" rel="noopener" class="contact-card"
+                        id="cc-telegram">
+                        <div class="cc-icon cc-tg">
+                            <img src="./assets/svg/socials/telegram.svg" alt="Telegram">
+                        </div>
+                        <div class="cc-text">
+                            <span class="cc-platform">Telegram</span>
+                            <span class="cc-handle">@switlydev</span>
+                        </div>
+                        <div class="cc-arrow">→</div>
+                    </a>
+                    <a href="https://github.com/switlydev" target="_blank" rel="noopener" class="contact-card"
+                        id="cc-github">
+                        <div class="cc-icon cc-gh">
+                            <img src="./assets/svg/socials/github.svg" alt="GitHub" style="filter:invert(1)">
+                        </div>
+                        <div class="cc-text">
+                            <span class="cc-platform">GitHub</span>
+                            <span class="cc-handle">@switlydev</span>
+                        </div>
+                        <div class="cc-arrow">→</div>
+                    </a>
+                    <a href="https://dsc.gg/bsps" target="_blank" rel="noopener" class="contact-card" id="cc-discord">
+                        <div class="cc-icon cc-dc">
+                            <img src="./assets/svg/socials/discord.svg" alt="Discord">
+                        </div>
+                        <div class="cc-text">
+                            <span class="cc-platform">Discord</span>
+                            <span class="cc-handle">bsps server</span>
+                        </div>
+                        <div class="cc-arrow">→</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <span class="footer-logo">&lt;switlydev/&gt;</span>
+            <span class="footer-copy">© 2025 switlydev · built with curiosity</span>
+        </div>
+    </footer>
+
+    <script src="https://web3forms.com/client/script.js" async defer></script>
+    <script src="../src/js/index.js"></script>
+</body>
+
+</html>
